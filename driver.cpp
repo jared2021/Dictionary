@@ -258,24 +258,34 @@ int main()
 	while(!File.eof())
 	{
 		std::getline(File,word);
-		std::cout<<word<<'\n';
-		if(word[0]=='a')
+		//std::cout<<word<<'\n';
+		if(word[0]=='a'||word[0]=='A')
 		{
-			temp=&dictionary[0];
-			if(!dictionary[0].filled)
+			if(zero_nine.filled==false)
 			{
-				while(temp->filled)
+				temp=&dictionary[0];
+			}
+			else
+			{
+				temp=&dictionary[1];
+			}
+			if(temp->filled==true)
+			{
+				while(temp->filled==true)
 				{
 					temp=temp->next;
 				}
 				temp->key=word;
+				std::cout<<"The word being stored is "<<word<<'\n';
+				temp->filled=true;
 
 			}
 			else
 			{
 				temp->key=word;
+				std::cout<<"The word being stored is "<<word<<'\n';
+				temp->filled=true;
 			}
-			//std::cout<<word<<'\n';
 		}
 		//else if(word[0]=='b')
 		//{
@@ -283,11 +293,29 @@ int main()
 		//}
 		//std::cout<<word<<'\n';
 		temp=&dictionary[0];
-		//while(temp->next!=nullptr)
-		//{
-			//std::cout<<"The word is "<<temp->key<<'\n';
-		//}
 	}
 	std::cout<<"The first word stored is "<<temp->key<<'\n';
+	temp=temp->next;
+	std::cout<<"The next word stored is "<<temp->key<<'\n';
+	temp=&dictionary[0];
+	while(temp->next!=nullptr)
+	{
+		std::cout<<temp->key<<"||";
+		temp=temp->next;
+		if(temp->next==nullptr)
+		{
+			std::cout<<"The last item stored is "<<temp->key;
+		}
+	}
+	temp=&dictionary[1];
+	while(temp->next!=nullptr)
+	{
+		std::cout<<temp->key<<"||";
+		temp=temp->next;
+		if(temp->next!=nullptr)
+		{
+			std::cout<<"The last item stored is "<<temp->key;
+		}
+	}
 	return 0;
 }
