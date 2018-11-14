@@ -31,7 +31,7 @@ int main()
 	 eighteen,eighteen_one,eighteen_two,eighteen_three,eighteen_four,eighteen_five,eighteen_six,eighteen_seven,eighteen_eight,eighteen_nine,
 	 nineteen,nineteen_one,nineteen_two,nineteen_three,nineteen_four,nineteen_five,nineteen_six,nineteen_seven,nineteen_eight,nineteen_nine,
 	 twenty,twenty_one,twenty_two,twenty_three,twenty_four,twenty_five,twenty_six,twenty_seven,twenty_eight,twenty_nine,
-	 *temp;
+	 *temp,seerer;
 
 	zero.next=&zero_one;
 	zero_one.next=&zero_two;
@@ -42,6 +42,7 @@ int main()
 	zero_six.next=&zero_seven;
 	zero_seven.next=&zero_eight;
 	zero_eight.next=&zero_nine;
+	zero_nine.next=nullptr;
 
 	one.next=&one_one;
 	one_one.next=&one_two;
@@ -52,6 +53,7 @@ int main()
 	one_six.next=&one_seven;
 	one_seven.next=&one_eight;
 	one_eight.next=&one_nine;
+	one_nine.next=nullptr;
 
 	two.next=&two_one;
 	two_one.next=&two_two;
@@ -62,6 +64,7 @@ int main()
 	two_six.next=&two_seven;
 	two_seven.next=&two_eight;
 	two_eight.next=&two_nine;
+	two_nine.next=nullptr;
 
 	three.next=&three_one;
 	three_one.next=&three_two;
@@ -72,6 +75,7 @@ int main()
 	three_six.next=&three_seven;
 	three_seven.next=&three_eight;
 	three_eight.next=&three_nine;
+	three_nine.next=nullptr;
 
 	four.next=&four_one;
 	four_one.next=&four_two;
@@ -82,6 +86,7 @@ int main()
 	four_six.next=&four_seven;
 	four_seven.next=&four_eight;
 	four_eight.next=&four_nine;
+	four_nine.next=nullptr;
 
 	five.next=&five_one;
 	five_one.next=&five_two;
@@ -92,6 +97,7 @@ int main()
 	five_six.next=&five_seven;
 	five_seven.next=&five_eight;
 	five_eight.next=&five_nine;
+	five_nine.next=nullptr;
 
 	six.next=&six_one;
 	six_one.next=&six_two;
@@ -102,6 +108,7 @@ int main()
 	six_six.next=&six_seven;
 	six_seven.next=&six_eight;
 	six_eight.next=&six_nine;
+	six_nine.next=nullptr;
 
 	seven.next=&seven_one;
 	seven_one.next=&seven_two;
@@ -112,6 +119,7 @@ int main()
 	seven_six.next=&seven_seven;
 	seven_seven.next=&seven_eight;
 	seven_eight.next=&seven_nine;
+	seven_nine.next=nullptr;
 
 	eight.next=&eight_one;
 	eight_one.next=&eight_two;
@@ -122,6 +130,7 @@ int main()
 	eight_six.next=&eight_seven;
 	eight_seven.next=&eight_eight;
 	eight_eight.next=&eight_nine;
+	eight_nine.next=nullptr;
 
 	nine.next=&nine_one;
 	nine_one.next=&nine_two;
@@ -132,6 +141,7 @@ int main()
 	nine_six.next=&nine_seven;
 	nine_seven.next=&nine_eight;
 	nine_eight.next=&nine_nine;
+	nine_nine.next=nullptr;
 
 	ten.next=&ten_one;
 	ten_one.next=&ten_two;
@@ -142,6 +152,7 @@ int main()
 	ten_six.next=&ten_seven;
 	ten_seven.next=&ten_eight;
 	ten_eight.next=&ten_nine;
+	ten_nine.next=nullptr;
 
 	eleven.next=&eleven_one;
 	eleven_one.next=&eleven_two;
@@ -152,6 +163,7 @@ int main()
 	eleven_six.next=&eleven_seven;
 	eleven_seven.next=&eleven_eight;
 	eleven_eight.next=&eleven_nine;
+	eleven_nine.next=nullptr;
 
 	twelve.next=&twelve_one;
 	twelve_one.next=&twelve_two;
@@ -162,6 +174,7 @@ int main()
 	twelve_six.next=&twelve_seven;
 	twelve_seven.next=&twelve_eight;
 	twelve_eight.next=&twelve_nine;
+	twelve_nine.next=nullptr;
 
 	thirteen.next=&thirteen_one;
 	thirteen_one.next=&thirteen_two;
@@ -172,6 +185,7 @@ int main()
 	thirteen_six.next=&thirteen_seven;
 	thirteen_seven.next=&thirteen_eight;
 	thirteen_eight.next=&thirteen_nine;
+	thirteen_nine.next=nullptr;
 
 	fourteen.next=&fourteen_one;
 	fourteen_one.next=&fourteen_two;
@@ -182,6 +196,7 @@ int main()
 	fourteen_six.next=&fourteen_seven;
 	fourteen_seven.next=&fourteen_eight;
 	fourteen_eight.next=&fourteen_nine;
+	fourteen_nine.next=nullptr;
 
 	fifteen.next=&fifteen_one;
 	fifteen_one.next=&fifteen_two;
@@ -192,6 +207,7 @@ int main()
 	fifteen_six.next=&fifteen_seven;
 	fifteen_seven.next=&fifteen_eight;
 	fifteen_eight.next=&fifteen_nine;
+	fifteen_nine.next=nullptr;
 
 	sixteen.next=&sixteen_one;
 	sixteen_one.next=&sixteen_two;
@@ -202,6 +218,7 @@ int main()
 	sixteen_six.next=&sixteen_seven;
 	sixteen_seven.next=&sixteen_eight;
 	sixteen_eight.next=&sixteen_nine;
+	sixteen_nine.next=nullptr;
 
 	seventeen.next=&seventeen_one;
 	seventeen_one.next=&seventeen_two;
@@ -212,6 +229,7 @@ int main()
 	seventeen_six.next=&seventeen_seven;
 	seventeen_seven.next=&seventeen_eight;
 	seventeen_eight.next=&seventeen_nine;
+	seventeen_nine.next=nullptr;
 
 	eighteen.next=&eighteen_one;
 	eighteen_one.next=&eighteen_two;
@@ -222,6 +240,7 @@ int main()
 	eighteen_six.next=&eighteen_seven;
 	eighteen_seven.next=&eighteen_eight;
 	eighteen_eight.next=&eighteen_nine;
+	eighteen_nine.next=nullptr;
 
 	nineteen.next=&nineteen_one;
 	nineteen_one.next=&nineteen_two;
@@ -232,6 +251,7 @@ int main()
 	nineteen_six.next=&nineteen_seven;
 	nineteen_seven.next=&nineteen_eight;
 	nineteen_eight.next=&nineteen_nine;
+	nineteen_nine.next=nullptr;
 	node dictionary[20];
 	dictionary[0]=zero;
 	dictionary[1]=one;
@@ -255,67 +275,137 @@ int main()
 	dictionary[19]=nineteen;
 	std::ifstream File("Dictionary.txt");
 	std::string word;
+	temp=&zero;
 	while(!File.eof())
 	{
+		int i=0;
 		std::getline(File,word);
-		//std::cout<<word<<'\n';
-		if(word[0]=='a'||word[0]=='A')
+		temp->key=word;
+		if(temp->next!=nullptr)
 		{
-			if(zero_nine.filled==false)
+			temp=temp->next;
+		}
+		else
+		{
+			i=i+1;
+			if(i==1)
 			{
-				temp=&dictionary[0];
+				temp=&one;
+			}
+			else if(i==2)
+			{
+				temp=&two;
+			}
+			else if(i==3)
+			{
+				temp=&three;
+			}
+			else if(i==4)
+			{
+				temp=&four;
+			}
+			else if(i==5)
+			{
+				temp=&five;
+			}
+			else if(i==6)
+			{
+				temp=&six;
+			}
+			else if(i==7)
+			{
+				temp=&seven;
+			}
+			else if(i==8)
+			{
+				temp=&eight;
+			}
+			else if(i==9)
+			{
+				temp=&nine;
+			}
+			else if (i==10)
+			{
+				temp=&ten;
+			}
+			else if(i==11)
+			{
+				temp=&eleven;
+			}
+			else if(i==12)
+			{
+				temp=&twelve;
+			}
+			else if (i==13)
+			{
+				temp=&thirteen;
+			}
+			else if(i==14)
+			{
+				temp=&fourteen;
+			}
+			else if(i==15)
+			{
+				temp=&fifteen;
+			}
+			else if(i==16)
+			{
+				temp=&sixteen;
+			}
+			else if(i==17)
+			{
+				temp=&seventeen;
+			}
+			else if(i==18)
+			{
+				temp=&eighteen;
 			}
 			else
 			{
-				temp=&dictionary[1];
-			}
-			if(temp->filled==true)
-			{
-				while(temp->filled==true)
-				{
-					temp=temp->next;
-				}
-				temp->key=word;
-				std::cout<<"The word being stored is "<<word<<'\n';
-				temp->filled=true;
-
-			}
-			else
-			{
-				temp->key=word;
-				std::cout<<"The word being stored is "<<word<<'\n';
-				temp->filled=true;
+				temp=&nineteen;
 			}
 		}
+		//std::cout<<word<<'\n';
+		//if(word[0]=='a'||word[0]=='A')
+		//{
+			//if(zero_nine.filled==false)
+			//{
+				//temp=&dictionary[0];
+			//}
+			//else
+			//{
+				//temp=&dictionary[1];
+			//}
+			//if(temp->filled==true)
+			//{
+				//while(temp->filled==true)
+				//{
+					//temp=temp->next;
+				//}
+				//temp->key=word;
+				//std::cout<<"The word being stored is "<<temp->key<<'\n';
+				//temp->filled=true;
+
+			//}
+			//else
+			//{
+				//temp->key=word;
+				//std::cout<<"The word being stored is "<<temp->key<<'\n';
+				//temp->filled=true;
+			//}
+		//}
 		//else if(word[0]=='b')
 		//{
 
 		//}
 		//std::cout<<word<<'\n';
-		temp=&dictionary[0];
 	}
-	std::cout<<"The first word stored is "<<temp->key<<'\n';
-	temp=temp->next;
-	std::cout<<"The next word stored is "<<temp->key<<'\n';
-	temp=&dictionary[0];
+	temp=&zero;
 	while(temp->next!=nullptr)
 	{
-		std::cout<<temp->key<<"||";
+		std::cout<< temp->key<<'\n';
 		temp=temp->next;
-		if(temp->next==nullptr)
-		{
-			std::cout<<"The last item stored is "<<temp->key;
-		}
 	}
-	temp=&dictionary[1];
-	while(temp->next!=nullptr)
-	{
-		std::cout<<temp->key<<"||";
-		temp=temp->next;
-		if(temp->next!=nullptr)
-		{
-			std::cout<<"The last item stored is "<<temp->key;
-		}
-	}
+	std::cout<<"The first key is "<<zero.key<<'\n';
 	return 0;
 }
