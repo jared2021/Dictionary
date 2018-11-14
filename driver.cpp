@@ -2,8 +2,11 @@
 #include <string>
 #include <sstream>
 #include <iostream>
+#include "TimeInterval.h"
 int main()
 {
+	TimeInterval time;
+	time.start();
 	//std::string dictionary[20];
 	struct node
 	{
@@ -287,7 +290,6 @@ int main()
 		}
 		else
 		{
-			std::cout<<"Now on the "<<i<<"th interation."<<'\n';
 			i=i+1;
 			if(i==1)
 			{
@@ -371,13 +373,12 @@ int main()
 	std::string search;
 	std::cin>>search;
 	bool found=false;
+	temp=&zero;
+	node compare;
 	for(int i=0;i<20;i++)
 	{
-		if(i==0)
-		{
-			temp=&zero;
-		}
-		else if(i==1)
+		std::cout<<i<<'\n';
+		if(i==1)
 		{
 			temp=&one;
 		}
@@ -453,37 +454,35 @@ int main()
 		{
 			temp=&nineteen;
 		}
-		//std::cout<<"I'm on the "<<i<<"th iteration."<<'\n';
 		while(temp->next!=nullptr)
 		{
-			if(temp->key==search)
+			std::cout<<"Entered while loop."<<'\n';
+			compare.key=temp->key;
+			std::cout<<"The word entered "<<search<<" vs the current word "<<compare.key<<'\n';
+			if(compare.key!=search)
+			{
+				temp=temp->next;
+			}
+			else if(compare.key==search)
 			{
 				std::cout<<"I found the word you were looking for. Now searching for similar words."<<'\n';
 				bool found=true;
 				i=20;
-			}
-			else
-			{
-				temp=temp->next;
-			}
+				if(found==true)
+				{
+					while(temp->next!=nullptr)
+					{
+						temp=temp->next;
+					}
+				}
+			}		
 		}
 	}
-	if(!found)
+	if(found==false)
 	{
 		std::cout<<"I could not find the word you were looking for, but I will search for similar words."<<'\n';
 	}
-	//temp=&zero;
-	//while(temp->next!=nullptr)
-	//{
-		//std::cout<< temp->key<<'\n';
-		//temp=temp->next;
-	//}
-	temp=&one;
-	while(temp->next!=nullptr)
-	{
-		std::cout<<temp->key<<'\n';
-		temp=temp->next;
-	}
-	std::cout<<"The first key is "<<zero.key<<'\n';
+	time.stop();
+	std::cout<<"The time it took to run this program was "<<time.GetInterval()<<" mirco seconds.";
 	return 0;
 }
