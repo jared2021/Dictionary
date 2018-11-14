@@ -276,9 +276,9 @@ int main()
 	std::ifstream File("Dictionary.txt");
 	std::string word;
 	temp=&zero;
+	int i=0;
 	while(!File.eof())
 	{
-		int i=0;
 		std::getline(File,word);
 		temp->key=word;
 		if(temp->next!=nullptr)
@@ -287,6 +287,7 @@ int main()
 		}
 		else
 		{
+			std::cout<<"Now on the "<<i<<"th interation."<<'\n';
 			i=i+1;
 			if(i==1)
 			{
@@ -365,45 +366,122 @@ int main()
 				temp=&nineteen;
 			}
 		}
-		//std::cout<<word<<'\n';
-		//if(word[0]=='a'||word[0]=='A')
-		//{
-			//if(zero_nine.filled==false)
-			//{
-				//temp=&dictionary[0];
-			//}
-			//else
-			//{
-				//temp=&dictionary[1];
-			//}
-			//if(temp->filled==true)
-			//{
-				//while(temp->filled==true)
-				//{
-					//temp=temp->next;
-				//}
-				//temp->key=word;
-				//std::cout<<"The word being stored is "<<temp->key<<'\n';
-				//temp->filled=true;
-
-			//}
-			//else
-			//{
-				//temp->key=word;
-				//std::cout<<"The word being stored is "<<temp->key<<'\n';
-				//temp->filled=true;
-			//}
-		//}
-		//else if(word[0]=='b')
-		//{
-
-		//}
-		//std::cout<<word<<'\n';
 	}
-	temp=&zero;
+	std::cout<<"What word would you like to search for?"<<'\n';
+	std::string search;
+	std::cin>>search;
+	bool found=false;
+	for(int i=0;i<20;i++)
+	{
+		if(i==0)
+		{
+			temp=&zero;
+		}
+		else if(i==1)
+		{
+			temp=&one;
+		}
+		else if(i==2)
+		{
+			temp=&two;
+		}
+		else if(i==3)
+		{
+			temp=&three;
+		}
+		else if(i==4)
+		{
+			temp=&four;
+		}
+		else if(i==5)
+		{
+			temp=&five;
+		}
+		else if(i==6)
+		{
+			temp=&six;
+		}
+		else if(i==7)
+		{
+			temp=&seven;
+		}
+		else if(i==8)
+		{
+			temp=&eight;
+		}
+		else if(i==9)
+		{
+			temp=&nine;
+		}
+		else if(i==10)
+		{
+			temp=&ten;
+		}
+		else if(i==11)
+		{
+			temp=&eleven;
+		}
+		else if(i==12)
+		{
+			temp=&twelve;
+		}
+		else if(i==13)
+		{
+			temp=&thirteen;
+		}
+		else if(i==14)
+		{
+			temp=&fourteen;
+		}
+		else if(i==15)
+		{
+			temp=&fifteen;
+		}
+		else if(i==16)
+		{
+			temp=&sixteen;
+		}
+		else if(i==17)
+		{
+			temp=&seventeen;
+		}
+		else if(i==18)
+		{
+			temp=&eighteen;
+		}
+		else if(i==19)
+		{
+			temp=&nineteen;
+		}
+		//std::cout<<"I'm on the "<<i<<"th iteration."<<'\n';
+		while(temp->next!=nullptr)
+		{
+			if(temp->key==search)
+			{
+				std::cout<<"I found the word you were looking for. Now searching for similar words."<<'\n';
+				bool found=true;
+				i=20;
+			}
+			else
+			{
+				temp=temp->next;
+			}
+		}
+	}
+	if(!found)
+	{
+		std::cout<<"I could not find the word you were looking for, but I will search for similar words."<<'\n';
+	}
+	//temp=&zero;
+	//while(temp->next!=nullptr)
+	//{
+		//std::cout<< temp->key<<'\n';
+		//temp=temp->next;
+	//}
+	temp=&one;
 	while(temp->next!=nullptr)
 	{
-		std::cout<< temp->key<<'\n';
+		std::cout<<temp->key<<'\n';
 		temp=temp->next;
 	}
 	std::cout<<"The first key is "<<zero.key<<'\n';
