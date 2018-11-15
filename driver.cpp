@@ -711,50 +711,58 @@ int main()
 	}
 	while(temp->next!=nullptr)
 	{
-		for (int i=0;i<search.size();i++)
+		if(found!=true)
 		{
-			std::cout<<temp->key<<'\n';
-			if(search[i]==temp->key[i])
+			for (int i=0;i<search.size();i++)
 			{
-				found=true;
+				if(search[i]==temp->key[i])
+				{
+					found=true;
+				}
+				else
+				{
+					found=false;
+					i=search.size();
+				}
 			}
-			else
+			if(found==true)
 			{
-				found=false;
-				i=search.size();
+				temp->searched=true;
+				while(temp->next!=nullptr)
+				{
+					temp=temp->next;
+				}
+			}
+			else if(found!=true)
+			{
+				temp->searched=true;
+				temp=temp->next;
+				if(temp->next==nullptr)
+				{
+					if(found!=true)
+					{
+						for(int i=0;i<search.size();i++)
+						{
+							std::cout<<temp->key<<'\n';
+							if(search[i]==temp->key[i])
+							{
+								found=true;
+							}
+							else
+							{
+								found=false;
+								i=search.size();
+							}
+						}
+					}
+				}
 			}
 		}
-		if(found==true)
+		else 
 		{
-			std::cout<<"True v1"<<'\n';
-			temp->searched=true;
 			while(temp->next!=nullptr)
 			{
 				temp=temp->next;
-			}
-		}
-		else if(found!=true)
-		{
-			temp->searched=true;
-			temp=temp->next;
-			if(temp->next==nullptr)
-			{
-				for(int i=0;i<search.size();i++)
-				{
-					if(search[i]==temp->key[i])
-					{
-						found=true;
-					}
-					else
-					{
-						found=false;
-						i=search.size();
-					}
-				}
-				if(found==true)
-				{
-					std::cout<<"True v2"<<'\n';
-				}
 			}
 		}
 		if(temp==compare&&search[0]=='a'||temp==compare&&search[0]=='A')
@@ -804,6 +812,7 @@ int main()
 	}
 	else if(found==true)
 	{
+		std::cout<<"True"<<'\n';
 		if(search[0]=='a'||search[0]=='A')
 		{
 			temp=&zero;
