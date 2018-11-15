@@ -13,6 +13,7 @@ int main()
 		std::string key;
 		node *next=nullptr;
 		bool filled=false;
+		bool searched=false;
 	}zero,zero_one,zero_two,zero_three,zero_four,zero_five,zero_six,zero_seven,zero_eight,zero_nine,
 	 one,one_one,one_two,one_three,one_four,one_five,one_six,one_seven,one_eight,one_nine,
 	 two,two_one,two_two,two_three,two_four,two_five,two_six,two_seven,two_eight,two_nine,
@@ -604,114 +605,207 @@ int main()
 	std::cin>>search;
 	bool found=false;
 	temp=&zero;
-	node compare;
-	for(int i=0;i<20;i++)
+	node *compare;
+	node *looker;
+	if(search[0]=='a'||search[0]=='A')
 	{
-		//std::cout<<i<<'\n';
-		if(i==1)
+		temp=&zero;
+		compare=&zero_nine;
+	}
+	else if(search[0]=='l')
+	{
+		temp=&two;
+	}
+	else if(search[0]=='w')
+	{
+		temp=&three;
+		compare=&three_nine;
+		looker=&four_nine;
+	}
+	else if(search[0]=='b')
+	{
+		temp=&five_one;
+	}
+	else if(search[0]=='t')
+	{
+		temp=&six;
+		compare=&six_nine;
+		looker=&seven_nine;
+	}
+	else if(search[0]=='p')
+	{
+		temp=&eight_two;
+	}
+	else if(search[0]=='s')
+	{
+		temp=&nine;
+		compare=&nine_nine;
+	}
+	else if(search[0]=='k')
+	{
+		temp=&ten_eight;
+	}
+	else if(search[0]=='m')
+	{
+		temp=&eleven;
+		compare=&eleven_nine;
+	}
+	else if(search[0]=='g')
+	{
+		temp=&twelve_five;
+	}
+	else if(search[0]=='h')
+	{
+		temp=&thirteen;
+		compare=&thirteen_nine;
+	}
+	else if(search[0]=='f')
+	{
+		temp=&fourteen_three;
+	}
+	else if(search[0]=='o')
+	{
+		temp=&fifteen;
+		compare=&fifteen_nine;
+	}
+	else if(search[0]=='n')
+	{
+		temp=&sixteen_two;
+	}
+	else if(search[0]=='j')
+	{
+		temp=&sixteen_nine;
+	}
+	else if(search[0]=='c')
+	{
+		temp=&seventeen;
+	}
+	else if(search[0]=='e')
+	{
+		temp=&seventeen_six;
+	}
+	else if(search[0]=='v')
+	{
+		temp=&seventeen_nine;
+	}
+	else if(search[0]=='d')
+	{
+		temp=&eighteen;
+	}
+	else if(search[0]=='i'||search[0]=='I')
+	{
+		temp=&eighteen_six;
+		compare=&eighteen_nine;
+	}
+	else if(search[0]=='u')
+	{
+		temp=&nineteen_two;
+	}
+	else if(search[0]=='y')
+	{
+		temp=&nineteen_five;
+	}
+	else if(search[0]=='r')
+	{
+		temp=&nineteen_eight;
+	}
+	while(temp->next!=nullptr)
+	{
+		for (int i=0;i<search.size();i++)
 		{
-			temp=&one;
+			if(search[i]==temp->key[i])
+			{
+				found=true;
+			}
+			else
+			{
+				found=false;
+				i=search.size();
+			}
 		}
-		else if(i==2)
+		if(found==true)
 		{
-			temp=&two;
-		}
-		else if(i==3)
-		{
-			temp=&three;
-		}
-		else if(i==4)
-		{
-			temp=&four;
-		}
-		else if(i==5)
-		{
-			temp=&five;
-		}
-		else if(i==6)
-		{
-			temp=&six;
-		}
-		else if(i==7)
-		{
-			temp=&seven;
-		}
-		else if(i==8)
-		{
-			temp=&eight;
-		}
-		else if(i==9)
-		{
-			temp=&nine;
-		}
-		else if(i==10)
-		{
-			temp=&ten;
-		}
-		else if(i==11)
-		{
-			temp=&eleven;
-		}
-		else if(i==12)
-		{
-			temp=&twelve;
-		}
-		else if(i==13)
-		{
-			temp=&thirteen;
-		}
-		else if(i==14)
-		{
-			temp=&fourteen;
-		}
-		else if(i==15)
-		{
-			temp=&fifteen;
-		}
-		else if(i==16)
-		{
-			temp=&sixteen;
-		}
-		else if(i==17)
-		{
-			temp=&seventeen;
-		}
-		else if(i==18)
-		{
-			temp=&eighteen;
-		}
-		else if(i==19)
-		{
-			temp=&nineteen;
-		}
-		while(temp->next!=nullptr)
-		{
-			//std::cout<<"Entered while loop."<<'\n';
-			compare.key=temp->key;
-			//std::cout<<"The word entered "<<search<<" vs the current word "<<compare.key<<'\n';
-			if(compare.key!=search)
+			std::cout<<"True"<<'\n';
+			temp->searched=true;
+			while(temp->next!=nullptr)
 			{
 				temp=temp->next;
 			}
-			else if(compare.key==search)
+		}
+		else if(found!=true)
+		{
+			temp->searched=true;
+			temp=temp->next;
+			if(temp->next==nullptr)
 			{
-				std::cout<<"I found the word you were looking for. Now searching for similar words."<<'\n';
-				bool found=true;
-				i=20;
-				if(found==true)
+				for(int i=0;i<search.size();i++)
 				{
-					while(temp->next!=nullptr)
+					if(search[i]==temp->key[i])
 					{
-						temp=temp->next;
+						found=true;
+					}
+					else
+					{
+						found=false;
+						i=search.size();
 					}
 				}
-			}		
+				if(found==true)
+				{
+					std::cout<<"True"<<'\n';
+				}
+			}
+		}
+		if(temp==compare&&search[0]=='a'||temp==compare&&search[0]=='A')
+		{
+			temp=&one;
+		}
+		else if(temp==compare&&search[0]=='w')
+		{
+			temp=&four;
+		}
+		else if(temp==looker&&search[0]=='w')
+		{
+			temp=&five;
+		}
+		else if(temp==compare&&search[0]=='t')
+		{
+			temp=&seven;
+		}
+		else if(temp==looker&&search[0]=='t')
+		{
+			temp=&eight;
+		}
+		else if(temp==compare&&search[0]=='s')
+		{
+			temp=&ten;
+		}
+		else if(temp==compare&&search[0]=='m')
+		{
+			temp=&twelve;
+		}
+		else if(temp==compare&&search[0]=='h')
+		{
+			temp=&fourteen;
+		}
+		else if(temp==compare&&search[0]=='o')
+		{
+			temp=&sixteen;
+		}
+		else if(temp==compare&&search[0]=='i'||temp==compare&&search[0]=='I')
+		{
+			temp=&nineteen;
 		}
 	}
 	if(found==false)
 	{
-		std::cout<<"I could not find the word you were looking for, but I will search for similar words."<<'\n';
+		std::cout<<"False"<<'\n';
 	}
+	else if(found==true)
+	{
+		
+	}
+			
 	time.stop();
 	std::cout<<"The time it took to run this program was "<<time.GetInterval()<<" mirco seconds.";
 	return 0;
