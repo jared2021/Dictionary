@@ -713,6 +713,7 @@ int main()
 	{
 		for (int i=0;i<search.size();i++)
 		{
+			std::cout<<temp->key<<'\n';
 			if(search[i]==temp->key[i])
 			{
 				found=true;
@@ -725,7 +726,7 @@ int main()
 		}
 		if(found==true)
 		{
-			std::cout<<"True"<<'\n';
+			std::cout<<"True v1"<<'\n';
 			temp->searched=true;
 			while(temp->next!=nullptr)
 			{
@@ -752,7 +753,7 @@ int main()
 				}
 				if(found==true)
 				{
-					std::cout<<"True"<<'\n';
+					std::cout<<"True v2"<<'\n';
 				}
 			}
 		}
@@ -803,7 +804,160 @@ int main()
 	}
 	else if(found==true)
 	{
-		
+		if(search[0]=='a'||search[0]=='A')
+		{
+			temp=&zero;
+			compare=&zero_nine;
+		}
+		else if(search[0]=='l')
+		{
+			temp=&two;
+		}
+		else if(search[0]=='w')
+		{
+			temp=&three;
+			compare=&three_nine;
+			looker=&four_nine;
+		}
+		else if(search[0]=='b')
+		{
+			temp=&five_one;
+		}
+		else if(search[0]=='t')
+		{
+			temp=&six;
+			compare=&six_nine;
+			looker=&seven_nine;
+		}
+		else if(search[0]=='p')
+		{
+			temp=&eight_two;
+		}
+		else if(search[0]=='s')
+		{
+			temp=&nine;
+			compare=&nine_nine;
+		}
+		else if(search[0]=='k')
+		{
+			temp=&ten_eight;
+		}
+		else if(search[0]=='m')
+		{
+			temp=&eleven;
+			compare=&eleven_nine;
+		}
+		else if(search[0]=='g')
+		{
+			temp=&twelve_five;
+		}
+		else if(search[0]=='h')
+		{
+			temp=&thirteen;
+			compare=&thirteen_nine;
+		}
+		else if(search[0]=='f')
+		{
+			temp=&fourteen_three;
+		}
+		else if(search[0]=='o')
+		{
+			temp=&fifteen;
+			compare=&fifteen_nine;
+		}
+		else if(search[0]=='n')
+		{
+			temp=&sixteen_two;
+		}
+		else if(search[0]=='j')
+		{
+			temp=&sixteen_nine;
+		}
+		else if(search[0]=='c')
+		{
+			temp=&seventeen;
+		}
+		else if(search[0]=='e')
+		{
+			temp=&seventeen_six;
+		}
+		else if(search[0]=='v')
+		{
+			temp=&seventeen_nine;
+		}
+		else if(search[0]=='d')
+		{
+			temp=&eighteen;
+		}
+		else if(search[0]=='i'||search[0]=='I')
+		{
+			temp=&eighteen_six;
+			compare=&eighteen_nine;
+		}
+		else if(search[0]=='u')
+		{
+			temp=&nineteen_two;
+		}
+		else if(search[0]=='y')
+		{
+			temp=&nineteen_five;
+		}
+		else if(search[0]=='r')
+		{
+			temp=&nineteen_eight;
+		}
+		while(temp->next!=nullptr)
+		{
+			if(search[0]==temp->key[0]&&search[1]==temp->key[1])
+			{
+				std::cout<<temp->key<<'\n';
+				temp=temp->next;
+			}
+			else
+			{
+				temp=temp->next;
+			}
+			if(temp==compare&&search[0]=='a'||temp==compare&&search[0]=='A')
+			{
+				temp=&one;
+			}
+			else if(temp==compare&&search[0]=='w')
+			{
+				temp=&four;
+			}
+			else if(temp==looker&&search[0]=='w')
+			{
+				temp=&five;
+			}
+			else if(temp==compare&&search[0]=='t')
+			{
+				temp=&seven;
+			}
+			else if(temp==looker&&search[0]=='t')
+			{
+				temp=&eight;
+			}
+			else if(temp==compare&&search[0]=='s')
+			{
+				temp=&ten;
+			}
+			else if(temp==compare&&search[0]=='m')
+			{
+				temp=&twelve;
+			}
+			else if(temp==compare&&search[0]=='h')
+			{
+				temp=&fourteen;
+			}
+			else if(temp==compare&&search[0]=='o')
+			{
+				temp=&sixteen;
+			}
+			else if(temp==compare&&search[0]=='i'||temp==compare&&search[0]=='I')
+			{
+				temp=&nineteen;
+			}
+		}
 	}
 			
 	time.stop();
