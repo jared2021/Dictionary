@@ -283,92 +283,176 @@ int main()
 	while(!File.eof())
 	{
 		std::getline(File,word);
-		temp->key=word;
-		if(temp->next!=nullptr)
+		std::cout<<word<<'\n';
+		if(word[0]=='a'||word[0]=='A')
 		{
-			temp=temp->next;
-		}
-		else
-		{
-			i=i+1;
-			if(i==1)
+			if(zero_nine.filled==true)
 			{
 				temp=&one;
 			}
-			else if(i==2)
-			{
-				temp=&two;
-			}
-			else if(i==3)
-			{
-				temp=&three;
-			}
-			else if(i==4)
-			{
-				temp=&four;
-			}
-			else if(i==5)
-			{
-				temp=&five;
-			}
-			else if(i==6)
-			{
-				temp=&six;
-			}
-			else if(i==7)
-			{
-				temp=&seven;
-			}
-			else if(i==8)
-			{
-				temp=&eight;
-			}
-			else if(i==9)
-			{
-				temp=&nine;
-			}
-			else if (i==10)
-			{
-				temp=&ten;
-			}
-			else if(i==11)
-			{
-				temp=&eleven;
-			}
-			else if(i==12)
-			{
-				temp=&twelve;
-			}
-			else if (i==13)
-			{
-				temp=&thirteen;
-			}
-			else if(i==14)
-			{
-				temp=&fourteen;
-			}
-			else if(i==15)
-			{
-				temp=&fifteen;
-			}
-			else if(i==16)
-			{
-				temp=&sixteen;
-			}
-			else if(i==17)
-			{
-				temp=&seventeen;
-			}
-			else if(i==18)
-			{
-				temp=&eighteen;
-			}
 			else
 			{
-				temp=&nineteen;
+				temp=&zero;
+			}
+			if(temp->filled==false)
+			{
+				temp->key=word;
+				temp->filled=true;
+			}
+			else if(temp->filled==true)
+			{
+				while(temp->filled==true)
+				{
+					temp=temp->next;
+				}
+				temp->key=word;
+				temp->filled=true;
+			}
+		}
+		else if(word[0]=='l')
+		{
+			temp=&two;
+			if(temp->filled==false)
+			{
+				temp->key=word;
+				temp->filled=true;
+			}
+			else if(temp->filled==true)
+			{
+				while(temp->filled==true)
+				{
+					temp=temp->next;
+				}
+				temp->key=word;
+				temp->filled=true;
+			}
+		}
+		else if(word[0]=='w'||word[0]=='b')
+		{
+			if(word[0]=='w')
+			{
+				if(four_nine.filled==true)
+				{
+					temp=&five;
+				}
+				else if(three_nine.filled==true)
+				{
+					temp=&four;
+				}
+				else
+				{
+					temp=&three;
+				}
+			}
+			else if(word[0]=='b')
+			{
+				temp=&five_one;
+			}
+			if(temp->filled==false)
+			{
+				temp->key=word;
+				temp->filled=true;
+			}
+			else if(temp->filled==true)
+			{
+				while(temp->filled==true)
+				{
+					temp=temp->next;
+				}
+				temp->key=word;
+				temp->filled=true;
+			}
+		}
+		else if(word[0]=='t'||word[0]=='p')
+		{
+			if(word[0]=='t')
+			{
+				if(seven_nine.filled==true)
+				{
+					temp=&eight;
+				}
+				else if(six_nine.filled==true)
+				{
+					temp=&seven;
+				}
+				else 
+				{
+					temp=&six;
+				}
+			}
+			else if(word[0]=='p')
+			{
+				temp=&eight_two;
+			}
+			if(temp->filled==false)
+			{
+				temp->key=word;
+				temp->filled=true;
+			}
+			else if(temp->filled==true)
+			{
+				while(temp->filled==true)
+				{
+					temp=temp->next;
+				}
+				temp->key=word;
+				temp->filled=true;
+			}
+		}
+		else if(word[0]=='s'||word[0]=='k')
+		{
+			if(word[0]=='s')
+			{
+				if(nine_nine.filled==true)
+				{
+					temp=&ten;
+				}
+				else
+				{
+					temp=&nine;
+				}
+			}
+			else if(word[0]=='k')
+			{
+				temp=&ten_eight;
+			}
+			if(temp->filled==false)
+			{
+				temp->key=word;
+				temp->filled=true;
+			}
+			else if(temp->filled==true)
+			{
+				while(temp->filled==true)
+				{
+					temp=temp->next;
+				}
+				temp->key=word;
+				temp->filled=true;
 			}
 		}
 	}
+	temp=&nine;
+	while(temp->next!=nullptr)
+	{
+		std::cout<<"Keys for first row "<<temp->key<<'\n';
+		temp=temp->next;
+	}
+	std::cout<<nine_nine.key<<'\n';
+	//temp=&seven;
+	//while(temp->next!=nullptr)
+	//{
+		//std::cout<<"Keys for second row "<<temp->key<<'\n';
+		//temp=temp->next;
+	//}
+	//std::cout<<seven_nine.key<<'\n';
+	temp=&ten;
+	while(temp->next!=nullptr)
+	{
+		std::cout<<"Keys for the third row "<<temp->key<<'\n';
+		temp=temp->next;
+	}
+	std::cout<<"The last key "<<ten_nine.key<<'\n';
 	std::cout<<"What word would you like to search for?"<<'\n';
 	std::string search;
 	std::cin>>search;
