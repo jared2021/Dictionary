@@ -725,15 +725,7 @@ int main()
 					i=search.size();
 				}
 			}
-			if(found==true)
-			{
-				temp->searched=true;
-				while(temp->next!=nullptr)
-				{
-					temp=temp->next;
-				}
-			}
-			else if(found!=true)
+			if(found!=true)
 			{
 				temp->searched=true;
 				temp=temp->next;
