@@ -377,7 +377,7 @@ int main()
 	node compare;
 	for(int i=0;i<20;i++)
 	{
-		std::cout<<i<<'\n';
+		//std::cout<<i<<'\n';
 		if(i==1)
 		{
 			temp=&one;
@@ -456,9 +456,9 @@ int main()
 		}
 		while(temp->next!=nullptr)
 		{
-			std::cout<<"Entered while loop."<<'\n';
+			//std::cout<<"Entered while loop."<<'\n';
 			compare.key=temp->key;
-			std::cout<<"The word entered "<<search<<" vs the current word "<<compare.key<<'\n';
+			//std::cout<<"The word entered "<<search<<" vs the current word "<<compare.key<<'\n';
 			if(compare.key!=search)
 			{
 				temp=temp->next;
