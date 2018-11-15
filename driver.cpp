@@ -255,35 +255,12 @@ int main()
 	nineteen_seven.next=&nineteen_eight;
 	nineteen_eight.next=&nineteen_nine;
 	nineteen_nine.next=nullptr;
-	node dictionary[20];
-	dictionary[0]=zero;
-	dictionary[1]=one;
-	dictionary[2]=two;
-	dictionary[3]=three;
-	dictionary[4]=four;
-	dictionary[5]=five;
-	dictionary[6]=six;
-	dictionary[7]=seven;
-	dictionary[8]=eight;
-	dictionary[9]=nine;
-	dictionary[10]=ten;
-	dictionary[11]=eleven;
-	dictionary[12]=twelve;
-	dictionary[13]=thirteen;
-	dictionary[14]=fourteen;
-	dictionary[15]=fifteen;
-	dictionary[16]=sixteen;
-	dictionary[17]=seventeen;
-	dictionary[18]=eighteen;
-	dictionary[19]=nineteen;
+	
 	std::ifstream File("Dictionary.txt");
 	std::string word;
-	temp=&zero;
-	int i=0;
 	while(!File.eof())
 	{
 		std::getline(File,word);
-		std::cout<<word<<'\n';
 		if(word[0]=='a'||word[0]=='A')
 		{
 			if(zero_nine.filled==true)
@@ -431,28 +408,197 @@ int main()
 				temp->filled=true;
 			}
 		}
+		else if(word[0]=='m'||word[0]=='g')
+		{
+			if(word[0]=='m')
+			{
+				if(eleven_nine.filled==true)
+				{
+					temp=&twelve;
+				}
+				else 
+				{
+					temp=&eleven;
+				}
+			}
+			else if(word[0]=='g')
+			{
+				temp=&twelve_five;
+			}
+			if(temp->filled==false)
+			{
+				temp->key=word;
+				temp->filled=true;
+			}
+			else if(temp->filled==true)
+			{
+				while(temp->filled==true)
+				{
+					temp=temp->next;
+				}
+				temp->key=word;
+				temp->filled=true;
+			}
+		}
+		else if(word[0]=='h'||word[0]=='f')
+		{
+			if(word[0]=='h')
+			{
+				if(thirteen_nine.filled==true)
+				{
+					temp=&fourteen;
+				}
+				else
+				{
+					temp=&thirteen;
+				}
+			}
+			else if(word[0]=='f')
+			{
+				temp=&fourteen_three;
+			}
+			if(temp->filled==false)
+			{
+				temp->key=word;
+				temp->filled=true;
+			}
+			else if(temp->filled==true)
+			{
+				while(temp->filled==true)
+				{
+					temp=temp->next;
+				}
+				temp->key=word;
+				temp->filled=true;
+			}
+		}
+		else if(word[0]=='o'||word[0]=='n'||word[0]=='j')
+		{
+			if(word[0]=='o')
+			{
+				if(fifteen_nine.filled==true)
+				{
+					temp=&sixteen;
+				}
+				else
+				{
+					temp=&fifteen;
+				}
+			}
+			else if(word[0]=='n')
+			{
+				temp=&sixteen_two;
+			}
+			else if(word[0]=='j')
+			{
+				temp=&sixteen_nine;
+			}
+			if(temp->filled==false)
+			{
+				temp->key=word;
+				temp->filled=true;
+			}
+			else if(temp->filled==true)
+			{
+				while(temp->filled==true)
+				{
+					temp=temp->next;
+				}
+				temp->key=word;
+				temp->filled=true;
+			}
+		}
+		else if(word[0]=='c'||word[0]=='e'||word[0]=='v')
+		{
+			if(word[0]=='c')
+			{
+				temp=&seventeen;
+			}
+			else if(word[0]=='e')
+			{
+				temp=&seventeen_six;
+			}
+			else if(word[0]=='v')
+			{
+				temp=&seventeen_nine;
+			}
+			if(temp->filled==false)
+			{
+				temp->key=word;
+				temp->filled=true;
+			}
+			else if(temp->filled==true)
+			{
+				while(temp->filled==true)
+				{
+					temp=temp->next;
+				}
+				temp->key=word;
+				temp->filled=true;
+			}
+		}
+		else if(word[0]=='d'||word[0]=='i'||word[0]=='I')
+		{
+			if(word[0]=='d')
+			{
+				temp=&eighteen;
+			}
+			else if(word[0]=='i'||word[0]=='I')
+			{
+				if(eighteen_nine.filled==true)
+				{
+					temp=&nineteen;
+				}
+				else 
+				{
+					temp=&eighteen_six;
+				}
+			}
+			if(temp->filled==false)
+			{
+				temp->key=word;
+				temp->filled=true;
+			}
+			else if(temp->filled==true)
+			{
+				while(temp->filled==true)
+				{
+					temp=temp->next;
+				}
+				temp->key=word;
+				temp->filled=true;
+			}
+		}
+		else if(word[0]=='u'||word[0]=='y'||word[0]=='r')
+		{
+			if(word[0]=='u')
+			{
+				temp=&nineteen_two;
+			}
+			else if(word[0]=='y')
+			{
+				temp=&nineteen_five;
+			}
+			else if(word[0]=='r')
+			{
+				temp=&nineteen_eight;
+			}
+			if(temp->filled==false)
+			{
+				temp->key=word;
+				temp->filled=true;
+			}
+			else if(temp->filled==true)
+			{
+				while(temp->filled==true)
+				{
+					temp=temp->next;
+				}
+				temp->key=word;
+				temp->filled=true;
+			}
+		}
 	}
-	temp=&nine;
-	while(temp->next!=nullptr)
-	{
-		std::cout<<"Keys for first row "<<temp->key<<'\n';
-		temp=temp->next;
-	}
-	std::cout<<nine_nine.key<<'\n';
-	//temp=&seven;
-	//while(temp->next!=nullptr)
-	//{
-		//std::cout<<"Keys for second row "<<temp->key<<'\n';
-		//temp=temp->next;
-	//}
-	//std::cout<<seven_nine.key<<'\n';
-	temp=&ten;
-	while(temp->next!=nullptr)
-	{
-		std::cout<<"Keys for the third row "<<temp->key<<'\n';
-		temp=temp->next;
-	}
-	std::cout<<"The last key "<<ten_nine.key<<'\n';
 	std::cout<<"What word would you like to search for?"<<'\n';
 	std::string search;
 	std::cin>>search;
